@@ -1,0 +1,109 @@
+{% extends 'nav.html' %}
+
+{% block content %}
+<style>
+
+h1::before {  
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  box-sizing: border-box;
+
+}
+
+h1:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  box-sizing: border-box;
+ 
+}
+
+h1::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0 0 0 0;
+  background: hsl(200 100% 80%);
+  z-index: -1;
+  transition: transform .3s ease;
+  
+}
+
+h1 {
+  position: relative;
+  font-size: 5rem;
+  
+}
+
+
+</style>
+<h1 class="text-center">Home</h1>
+
+
+{% if error %}
+
+<div class="container shadow p-4">
+    <div class="row">
+        <div class="col-12 text-center">
+            <p>The Url you are looking for doesn't exist</p>
+            <a href="/dashboard" class="btn btn-primary">Shorten A Url</a>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+{% endif %}
+
+ <!-- Gallery -->
+ <div class="row" style="object-fit: fill;">
+    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+      <img
+        src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(73).jpg"
+        class="w-100 shadow-1-strong rounded mb-4" 
+        alt=""
+      />
+  
+      <img
+        src="https://mdbootstrap.com/img/Photos/Vertical/mountain1.jpg"
+        class="w-100 shadow-1-strong rounded mb-4" 
+        alt=""
+      />
+    </div>
+  
+    <div class="col-lg-4 mb-4 mb-lg-0">
+      <img
+        src="https://mdbootstrap.com/img/Photos/Vertical/mountain2.jpg"
+        class="w-100 shadow-1-strong rounded mb-4" 
+        alt=""
+      />
+  
+      <img
+        src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(73).jpg"
+        class="w-100 shadow-1-strong rounded mb-4" 
+        alt=""
+      />
+    </div>
+  
+    <div class="col-lg-4 mb-4 mb-lg-0">
+      <img
+        src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
+        class="w-100 shadow-1-strong rounded mb-4" 
+        alt=""
+      />
+  
+      <img
+        src="https://mdbootstrap.com/img/Photos/Vertical/mountain3.jpg"
+        class="w-100 shadow-1-strong rounded mb-4" 
+        alt=""
+      />
+    </div>
+  </div>
+  <!-- Gallery -->
+  
+
+</body>
+
+</html>
+
+{% endblock %}
